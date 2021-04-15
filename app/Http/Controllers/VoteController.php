@@ -57,4 +57,11 @@ class VoteController extends Controller
 
         return back();
     }
+
+    public function remove($id)
+    {
+        Vote::destroy($id);
+
+        return redirect('/');
+    }
 }
