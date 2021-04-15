@@ -14,3 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', '\App\Http\Controllers\VoteController@showAll');
+
+Route::get('/vote/create', function () {
+    return view('create_vote');
+});
+
+Route::post('/vote/create', '\App\Http\Controllers\VoteController@create');
+
+Route::get('/vote/show/{id}', '\App\Http\Controllers\VoteController@showID');
+Route::get('/vote/positive_inc/{id}', '\App\Http\Controllers\VoteController@increasePositive');
+Route::get('/vote/negative_inc/{id}', '\App\Http\Controllers\VoteController@increaseNegative');
